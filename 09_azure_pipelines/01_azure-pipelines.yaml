@@ -24,7 +24,7 @@ steps:
 - task: qetza.replacetokens.replacetokens-task.replacetokens@3
   displayName: 'Replace Image TAG'
   inputs:
-    rootDirectory: '02_kubernetes_aks'
+    rootDirectory: '02_sample_app_yaml'
     targetFiles: 'app-deploy.yaml'
     encoding: 'auto'
     writeBOM: true
@@ -36,7 +36,7 @@ steps:
     enableTransforms: false
     enableTelemetry: true
 
-- script: cat 02_kubernetes_aks/app-deploy.yaml
+- script: cat 02_sample_app_yaml/app-deploy.yaml
   displayName: View app-deploy.yaml
 
 - task: Kubernetes@1
@@ -49,6 +49,6 @@ steps:
     namespace: 'default'
     command: 'apply'
     useConfigurationFile: true
-    configuration: '02_kubernetes_aks'
+    configuration: '02_sample_app_yaml'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
