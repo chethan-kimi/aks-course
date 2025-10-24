@@ -44,8 +44,8 @@ steps:
   inputs:
     connectionType: 'Azure Resource Manager'
     azureSubscriptionEndpoint: 'azure-connection'
-    azureResourceGroup: 'rg-containerapps-azure-pipelines'
-    kubernetesCluster: 'aks-cluster-dev'
+    azureResourceGroup: 'myAKSResourceGroupc6594e'
+    kubernetesCluster: 'myAKSClusterc6594e'
     namespace: 'default'
     command: 'apply'
     useConfigurationFile: true
