@@ -13,7 +13,7 @@ steps:
 - task: AzureCLI@2
   displayName: Docker Build & Push
   inputs:
-    azureSubscription: 'Azure subscription 1'
+    azureSubscription: 'azure-connection'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
@@ -43,7 +43,7 @@ steps:
   displayName: Kubernetes Deploy
   inputs:
     connectionType: 'Azure Resource Manager'
-    azureSubscriptionEndpoint: 'Azure subscription 1'
+    azureSubscriptionEndpoint: 'azure-connection'
     azureResourceGroup: 'rg-containerapps-azure-pipelines'
     kubernetesCluster: 'aks-cluster-dev'
     namespace: 'default'
